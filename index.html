@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COST</title>
+</head>
+<body>
+    <p>
+        <pre>
+    <h3><b>practical no .1:- Using R/pyhton execute the basic command ,array,list & frame</b></h3>
+
+#variable
+a<-"hii"
+print(a)
+
+#create vector
+v<-c('red','yellow','blue')
+print(v)
+
+#create matrix
+m<-matrix(c(1,2,3,4,5,6,7,8,9),nrow=3,ncol=3,byrow=TRUE)
+print(m)
+
+#create list
+cl<-list(c(1,2,3),1.2,3,'sin')
+print(cl)
+
+#create array
+arr<-array(c(1,0),dim=c(2,3))
+print(arr)
+
+#create data frame
+BMI<-data.frame(gender=c("Female","Female","Male","Frame"),height(152,155,276,86),weight=c(12,21,33,42))
+print(BMI)
+        </pre>
+	</p>
+
+<h3>practical no.2:- create a matrix using r/pyhton and perform operation addition,inverse,transpose and multiplication operation</h3>
+<p><pre>
+a<-matrix(c(1,2,3,4),nrow=2,ncol=2,byrow=TRUE)
+print(a)
+
+b<-matrix(c(5,6,7,8),nrow=2,ncol=2,byrow=TRUE)
+print(b)
+
+c<-a+b
+print(c)
+
+d<-a-b
+print(d)
+
+e<-a%*%b
+print(e)
+
+print(t(a))
+print(det(a))
+print(a^2)
+</pre></p>
+
+<h3>practical no.3:- using r/pyhton execute the statistical function:- MEAN,MODE,MEDIAN,QUARTILE,RANGE,INTER QUARTILE RANGE,HISTOGRAM </h3>
+<p>
+	<pre>
+a<-c(12,7,3,4,2,18,54,-21,8,-5)
+print(mean(a))
+
+print(median(a))
+
+find_mode<-function(x){
+	values<-unique(x)
+	counts<-tabulate(match(x,values))
+	mode_index<-which.max(counts)
+	mode<-values[mode_index]
+	return(mode)
+}
+a<-c(1,2,3,3,4,5,3,2,1,1)
+mode<-find_mode(a)
+print(mode)
+
+q<-c(2,4,8,10,12)
+print(quantile(q,probs=0.25))
+
+print(max(q)-min(q))
+
+x<-c(12,18,28,91,98)
+print(IQR(x))
+</pre>
+</p>
+
+<h3>practical no.4:- using r/ python import the data from the excel / .csv file and perform the above function </h3>
+<p>
+	<pre>
+library(readxl)
+a<-source("C://Users//Admin//Documents//data.xlsx")
+print(mean(a$data))
+print(median(a$data))
+M<-function(x){
+		values<-unique(x)
+	counts<-tabulate(match(x,values))
+	mode_index<-which.max(counts)
+	mode<-values[mode_index]
+	return(mode)
+}
+mode<-M(a$data)
+print(mode)
+
+print(quantile(a$data,probs=0.25))
+print(quantile(a$data))
+print(IQR(a$data))
+</pre>
+</p>
+<h3>practical no.5:- Using R/python import the data from the excel /.csv file and calculate the standard deviation, variance, co-variance</h3>
+<p>
+	<pre>
+library(readxl)
+a<-source("C://Users//Admin//Documents//data.xlsx")
+s<-sd(a$data)
+print(s)
+print(var(a$t1))
+print(cov(a$t1,a$data))
+	</pre>
+</p>
+
+<h3>practical no6:- Using R/pyhton import the data from excel /.csv file and draw the skewness</h3>
+<p>
+	<pre>
+library(readxl)
+data<-c(1,2,2,3,3,3,4,4,4,4,5,5,8,8,8,8)
+hist(data,freq=FALSE,main="Histogram with density",xlab= "values",ylab="Density")
+
+lines(density(data),col="blue")
+skew<-skewness(data)
+test(x=max(data)-1,y=3,labels=paste("Skewness",round(skew,2))
+
+test(x=max(data)-1,y=0.3,labels=paste("Skewness",round(skew,2))
+	</pre>
+</p>
+</body>
+</html>
